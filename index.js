@@ -20,7 +20,7 @@ var api = new ParseServer({
   push: {
     ios: {
       token: {
-        key: '/apns/SUYCNDVN8M.p8',
+        key: __dirname + '/apns/SUYCNDVN8M.p8',
         keyId: "SUYCNDVN8M",
         teamId: "HJP269YLH5"
       },
