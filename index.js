@@ -22,9 +22,9 @@ var api = new ParseServer({
       token: {
         key: '/apns/SUYCNDVN8M.p8',
         keyId: "SUYCNDVN8M",
-        teamId: "HJP269YLH5" // The Team ID for your developer account
+        teamId: "HJP269YLH5"
       },
-      topic: 'ca.shared.SharedNews', // The bundle identifier associated with your app
+      topic: 'ca.shared.SharedNews',
       production: false
     }
   },
