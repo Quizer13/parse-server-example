@@ -4,6 +4,7 @@
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 var path = require('path');
+var kue = require('kue')
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
@@ -39,6 +40,10 @@ var api = new ParseServer({
 // javascriptKey, restAPIKey, dotNetKey, clientKey
 
 var app = express();
+
+var redisUrl = process.env.REDIS_URL;
+kue.createQueue({ redis: redisUrl });
+app.use('/kue', kue.app); // For the kue dashboard
 
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
