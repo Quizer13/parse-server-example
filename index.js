@@ -3,6 +3,7 @@
 
 var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
+var AnalyticsAdapter = require('parse-server').AnalyticsAdapter;
 var path = require('path');
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
@@ -18,6 +19,9 @@ var api = new ParseServer({
   masterKey: process.env.MASTER_KEY || '',
   serverURL: process.env.SERVER_URL || 'https://localhost:1337/parse',
   scheduledPush: true,
+  verifyUserEmails: true,
+  analyticsAdapter: new AnalyticsAdapter(),
+  verbose: true,
   push: {
     ios: {
       token: {
