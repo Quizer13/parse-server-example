@@ -20,7 +20,7 @@ var api = new ParseServer({
   serverURL: process.env.SERVER_URL || 'https://localhost:1337/parse',
   scheduledPush: true,
   verifyUserEmails: true,
-  analyticsAdapter: new AnalyticsAdapter(),
+  analyticsAdapter: AnalyticsAdapter,
   verbose: true,
   push: {
     ios: {
