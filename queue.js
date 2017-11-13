@@ -3,8 +3,8 @@ var redisUrl = process.env.REDIS_URL
 var jobs = kue.createQueue({ redis: redisUrl })
 
 var Parse = require('parse/node')
-Parse.initialize('masterKey')
-Parse.serverURL = yourServerUrl
+Parse.initialize('myMasterKey')
+Parse.serverURL = 'https://shared-cloud-server.herokuapp.com/parse'
 
 /**
  * Process the job for ending a round after 24h
